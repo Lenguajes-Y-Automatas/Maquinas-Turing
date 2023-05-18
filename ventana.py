@@ -1,18 +1,7 @@
 import tkinter as tk
 from maquina_de_turing import maquina
 
-def evaluar():
-    # Obtener el contenido de las cajas de texto
-    texto1 = entrada1.get()
-    texto2 = entrada2.get()
-
-    # Realizar alguna operación o evaluación con los textos
-
-    # Mostrar el resultado en el área de texto
-    resultado.config(state="normal")
-    resultado.delete("1.0", "end")
-    resultado.insert("end", "Resultado: {}".format(texto1 + texto2))
-    resultado.config(state="disabled")
+#funcion para mandar los datos de la caja al archivo de maquina_de_turing
 def evaluar1():
     m = maquina()
     a = entrada1.get()

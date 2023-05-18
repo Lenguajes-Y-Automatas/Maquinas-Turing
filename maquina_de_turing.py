@@ -3,6 +3,9 @@ from tkinter import messagebox as MessageBox
 import time
 class maquina:
     def turing(self,dato,dato2):
+
+        #verifica condiciones optimas para hacer el proceso 
+
         bandera_dato = True
         bandera_dato2 = True
         for o in range (len(dato)):
@@ -12,41 +15,26 @@ class maquina:
             if dato2[p] != '0' and dato2[p] != '1':
                 bandera_dato2 = False
        
+        #condicional para verificar si ejecuta o manda mensaje de error
 
         if len(dato) == len(dato2) and len(dato) <= 10 and len(dato2) <= 10 and bandera_dato == True and bandera_dato2 == True:
             # Crear una matriz de 3x10 con la letra "B"
             matriz = [['B'] * 10 for _ in range(4)]
-            """ matriz.append([''] * 10)  """
 
-            # Pedir un dato como cadena con un máximo de 10 caracteres123
-            """ dato = input("Ingrese numero binario (máximo 10 caracteres): ")[:10] """
-
+            #ingresa los datos de la cadena "dato" a la primera lista de la lista de listas
             posicion = len(matriz[0])-1
             for i in range(len(dato)-1, -1, -1):
                 matriz[0][posicion] = dato[i]
                 posicion -= 1
 
-            """ dato2 = input("Ingrese otro numero binario (máximo 10 caracteres): ")[:10] """
-
+            #ingresa los deatos de la cadena "dato2" a la segunda lista de la lista de listas
             posicion2 = len(matriz[1])-1
             for i in range(len(dato2)-1, -1, -1):
                 matriz[1][posicion2] = dato2[i]
                 posicion2 -= 1
 
+            #comienza todo el proceso de la suma con la maquina de turing
 
-
-            posicion2 = len(matriz[1])-1
-            for i in range(len(dato2)-1, -1, -1):
-                matriz[1][posicion2] = dato2[i]
-                posicion2 -= 1
-
-            """ matriz[3][len(matriz[3])-1] = 'aqui' """
-
-            """ # Imprimir la matriz
-            for fila in matriz:
-                print(fila) """
-
-        
             resultado = len(matriz[1])-1
             bandera = True
             while resultado >= 0 and bandera == True:
@@ -102,7 +90,8 @@ class maquina:
                     matriz[3][resultado + 1] = '3'
                     resultado -= 1
                     bandera = False
-                # Imprimir la matriz
+                    
+            # Imprimir la matriz
             for fila in matriz:
                 print(fila)
           
