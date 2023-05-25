@@ -354,7 +354,6 @@ class Interfaz:
             self.generar(listado)
 
     def generar(self, listado):
-        print("Se llamó a la función generar")
         #* Etiquetas de salida: Primera fila
         self.c1f1.config(text=listado[10][0], bg='#b6bfca')
         self.c1f2.config(text=listado[10][1], bg='#b6bfca')
@@ -420,7 +419,7 @@ class Interfaz:
         self.c11f3.config(text=listado[0][2], bg='#b6bfca')
         self.c11f4.config(text=listado[0][3], bg='#b6bfca')
         self.mainwindow.update()
-        time.sleep(0.8)
+        time.sleep(2.2)
 
 if __name__ == '__main__':
     Interfaz().ventana()

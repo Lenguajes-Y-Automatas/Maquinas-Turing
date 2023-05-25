@@ -129,9 +129,9 @@ class TuringMachine:
                     self.master_tape[pointer][2] = '1'
                     self.master_tape[pointer][3] = '-'
                     pointer -= 1 #* Movemos el apuntador a la izquierda
+                    self.master_tape[pointer][3] = '1'
                     my_other_copy = copy.deepcopy(self.master_tape)
                     self.pool.append(my_other_copy)
-                    self.master_tape[pointer][3] = '1'
                 
                 if tape_a == 'B' and tape_b == 'B':
                     self.master_tape[pointer][2] = 'B'
@@ -141,9 +141,9 @@ class TuringMachine:
                     my_other_copy = copy.deepcopy(self.master_tape)
                     self.pool.append(my_other_copy)
                     finish = True #* Terminamos el ciclo
-        
+
         return self.pool
 
 if __name__ == '__main__':
     turing = TuringMachine()
-    turing.create_tapes('0101010', '1101')
+    turing.create_tapes('10101011', '10101011')
