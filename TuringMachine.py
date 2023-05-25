@@ -20,9 +20,6 @@ class TuringMachine:
             for i in range(diferencia):
                 cinta2 = '0' + cinta2
 
-        cadena1 = cinta1
-        cadena2 = cinta2
-
         if len(cinta1) < 10:
             difference = 10 - len_cinta1
 
@@ -39,17 +36,12 @@ class TuringMachine:
         tape2 = [i for i in cinta2]
 
         last_tape = ['B', 'B', 'B', '-']
-
         self.master_tape.append(last_tape)
 
         for i in range(10):
             self.master_tape.append([tape1[i], tape2[i], 'B', '-'])
 
-        """ for item in self.master_tape:
-            print(item) """
-
-        self.steps()
-        #return self.master_tape, cadena1, cadena2
+        return self.master_tape
 
     def steps(self):
         #* Iniciamos el recorrido de la máquina de turing asignado el estado inicial a self.master_tape[-1][3]
@@ -150,10 +142,8 @@ class TuringMachine:
                     self.pool.append(my_other_copy)
                     finish = True #* Terminamos el ciclo
         
-        for item in self.pool:
-            print('-------------------')
-            for subitem in item:
-                print(subitem)
+        return self.pool
+
 if __name__ == '__main__':
     turing = TuringMachine()
     turing.create_tapes('0101010', '1101')
